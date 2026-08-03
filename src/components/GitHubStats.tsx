@@ -103,42 +103,44 @@ export function GitHubStats() {
         <div className="lg:col-span-8 grid gap-6">
           
           {/* Card: Contribution Grid */}
-          <motion.div variants={fadeUp} className="glass border-white/[0.05] rounded-3xl p-6">
-            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest flex items-center gap-2 mb-5">
+          <motion.div variants={fadeUp} className="glass border-white/[0.05] rounded-3xl p-4.5 sm:p-6">
+            <h3 className="text-xs sm:text-sm font-bold text-foreground uppercase tracking-widest flex items-center gap-2 mb-4 sm:mb-5">
               <Github className="h-4.5 w-4.5 text-accent" /> Activity Heatmap
             </h3>
             
-            <div
-              role="img"
-              aria-label={`GitHub contribution activity for ${user}`}
-              className="grid grid-flow-col grid-rows-7 gap-[3px] overflow-hidden pr-2"
-            >
-              {contributionCells.map((level, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: (i % 120) * 0.003 }}
-                  className="aspect-square w-full rounded-[2px]"
-                  style={{
-                    background:
-                      level === 0
-                        ? "var(--surface)"
-                        : level === 1
-                        ? "rgba(37, 99, 235, 0.25)"
-                        : level === 2
-                        ? "rgba(37, 99, 235, 0.55)"
-                        : level === 3
-                        ? "rgba(37, 99, 235, 0.85)"
-                        : "var(--accent)",
-                  }}
-                />
-              ))}
+            <div className="overflow-x-auto pb-2 scrollbar-thin">
+              <div
+                role="img"
+                aria-label={`GitHub contribution activity for ${user}`}
+                className="grid min-w-[650px] grid-flow-col grid-rows-7 gap-[3px] pr-2"
+              >
+                {contributionCells.map((level, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: (i % 120) * 0.003 }}
+                    className="aspect-square w-full rounded-[2px]"
+                    style={{
+                      background:
+                        level === 0
+                          ? "var(--surface)"
+                          : level === 1
+                          ? "rgba(37, 99, 235, 0.25)"
+                          : level === 2
+                          ? "rgba(37, 99, 235, 0.55)"
+                          : level === 3
+                          ? "rgba(37, 99, 235, 0.85)"
+                          : "var(--accent)",
+                    }}
+                  />
+                ))}
+              </div>
             </div>
             
-            <div className="mt-4.5 flex items-center justify-between text-xs text-muted-foreground">
-              <span>Last 12 months activity scheduler</span>
+            <div className="mt-3 sm:mt-4.5 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+              <span>Last 12 months activity</span>
               <div className="flex items-center gap-1.5">
                 <span>Less</span>
                 <span className="h-2.5 w-2.5 rounded-[2px] bg-surface" />

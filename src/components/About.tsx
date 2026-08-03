@@ -77,7 +77,7 @@ export function About() {
           className="lg:col-span-7 flex flex-col gap-5"
         >
           {/* Bio Card */}
-          <div className="glass border-white/[0.05] rounded-3xl p-8 relative overflow-hidden">
+          <div className="glass border-white/[0.05] rounded-3xl p-5 sm:p-8 relative overflow-hidden">
             {/* Decorative gradient blob */}
             <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
@@ -87,17 +87,17 @@ export function About() {
                 <div className="h-10 w-10 rounded-2xl bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
                   <Briefcase className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground tracking-tight">Who I Am &amp; What I Do</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Who I Am &amp; What I Do</h3>
               </div>
 
-              <p className="text-base leading-relaxed text-muted-foreground">
+              <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
                 I am a specialized{" "}
                 <strong className="font-bold text-foreground bg-primary/10 px-1.5 py-0.5 rounded-md">Java Backend Developer</strong>
                 {" "}and{" "}
                 <strong className="font-bold text-foreground bg-primary/10 px-1.5 py-0.5 rounded-md">Backend Team Coordinator</strong>
                 {" "}with {profile.experience} of experience architecting secure, reliable systems. I design and build the core engines that power high-traffic enterprise platforms.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Currently, at{" "}
                 <strong className="font-bold text-primary">Caryanam India Pvt Ltd</strong>
                 , I coordinate the backend engineering sprint cycles, code reviews, and cross-team integration tasks (QA, Frontend, DevOps) while actively writing code for complex payment and notification systems.
@@ -106,16 +106,16 @@ export function About() {
           </div>
 
           {/* Industries Worked Card */}
-          <div className="glass border-white/[0.05] rounded-3xl p-6.5 relative overflow-hidden">
+          <div className="glass border-white/[0.05] rounded-3xl p-5 sm:p-6.5 relative overflow-hidden">
             <div className="absolute -top-8 -right-8 h-28 w-28 rounded-full bg-accent/10 blur-2xl pointer-events-none" />
-            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest flex items-center gap-2 relative">
+            <h3 className="text-xs sm:text-sm font-bold text-foreground uppercase tracking-widest flex items-center gap-2 relative">
               <Activity className="h-4.5 w-4.5 text-accent" /> Industries Worked
             </h3>
-            <div className="mt-4 flex flex-wrap gap-2.5 relative">
+            <div className="mt-4 flex flex-wrap gap-2 relative">
               {industries.map((ind, i) => (
                 <span
                   key={i}
-                  className="rounded-xl bg-primary/10 border border-primary/25 text-primary text-xs font-semibold px-4 py-2 hover:bg-primary/20 hover:border-primary/40 transition-all cursor-default"
+                  className="rounded-xl bg-primary/10 border border-primary/25 text-primary text-xs font-semibold px-3 py-1.5 sm:px-4 sm:py-2 hover:bg-primary/20 hover:border-primary/40 transition-all cursor-default"
                 >
                   {ind}
                 </span>
@@ -124,15 +124,15 @@ export function About() {
           </div>
 
           {/* Responsibilities Card */}
-          <div className="glass border-white/[0.05] rounded-3xl p-7">
-            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2">
+          <div className="glass border-white/[0.05] rounded-3xl p-5 sm:p-7">
+            <h4 className="text-xs sm:text-sm font-bold text-foreground uppercase tracking-wider mb-4 sm:mb-5 flex items-center gap-2">
               <span className="h-1.5 w-5 rounded-full bg-primary inline-block" />
               Current Core Responsibilities
             </h4>
-            <ul className="grid gap-3 sm:grid-cols-2 text-sm">
+            <ul className="grid gap-3 sm:grid-cols-2 text-xs sm:text-sm">
               {responsibilities.map((resp, i) => (
                 <li key={i} className="flex items-center gap-2.5 group">
-                  <CheckCircle2 className="h-4.5 w-4.5 text-primary shrink-0 group-hover:scale-110 transition-transform" />
+                  <CheckCircle2 className="h-4 w-4 sm:h-4.5 sm:w-4.5 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-muted-foreground group-hover:text-foreground transition-colors">{resp}</span>
                 </li>
               ))}
@@ -146,7 +146,7 @@ export function About() {
           className="lg:col-span-5 flex flex-col gap-5"
         >
           {/* Specializations Card */}
-          <div className="glass border-white/[0.05] rounded-3xl p-6.5 flex-1">
+          <div className="glass border-white/[0.05] rounded-3xl p-5 sm:p-6.5 flex-1">
             <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-5">Technical Focus</h3>
             <div className="grid gap-3">
               {specializations.map((spec, i) => {

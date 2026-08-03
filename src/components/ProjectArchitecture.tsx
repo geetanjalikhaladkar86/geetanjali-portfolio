@@ -110,10 +110,15 @@ export function ProjectArchitecture() {
                   )}
 
                   {/* Node Title */}
-                  <h4 className="mt-3.5 text-center text-xs font-bold text-foreground uppercase tracking-wider group-hover:text-accent transition-colors">
+                  <h4 className="mt-2.5 sm:mt-3.5 text-center text-xs font-bold text-foreground uppercase tracking-wider group-hover:text-accent transition-colors">
                     {step.title}
                   </h4>
-                  <p className="mt-1 text-[10px] text-muted-foreground font-mono">{step.tech}</p>
+                  <p className="mt-0.5 sm:mt-1 text-[10px] text-muted-foreground font-mono">{step.tech}</p>
+
+                  {/* Vertical Connector Line for Mobile (except last item) */}
+                  {idx < flowSteps.length - 1 && (
+                    <div className="h-4 w-[2px] bg-gradient-to-b from-primary/40 to-accent/40 my-2 lg:hidden" />
+                  )}
                 </div>
               );
             })}

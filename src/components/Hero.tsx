@@ -62,22 +62,22 @@ export function Hero() {
           >
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/15 px-5 py-2.5 text-xs font-semibold text-primary shadow-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/15 px-3.5 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-semibold text-primary shadow-sm max-w-full leading-tight"
             >
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="tracking-wide">Available for Backend Coordinator &amp; Dev Roles</span>
             </motion.div>
 
-            <motion.p variants={fadeUp} className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            <motion.p variants={fadeUp} className="mt-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               Welcome to my space
             </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              className="mt-2 text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.15] tracking-tight text-foreground"
+              className="mt-2 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-foreground"
             >
               Hi, I&apos;m{" "}
               <span className="text-gradient block bg-gradient-to-r from-primary via-accent to-amber-600 bg-clip-text text-transparent">
@@ -87,7 +87,7 @@ export function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-5 min-h-[36px] font-mono text-lg font-medium text-accent sm:text-xl md:text-2xl"
+              className="mt-4 sm:mt-5 min-h-[32px] sm:min-h-[36px] font-mono text-base font-medium text-accent sm:text-xl md:text-2xl"
               aria-live="polite"
             >
               <span>{typed}</span>
@@ -96,22 +96,22 @@ export function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+              className="mt-4 sm:mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-lg"
             >
-              {profile.tagline} Specializing in building secure, high-performance distributed systems, robust database engines, and microservices for modern enterprises.
+              Specializing in building secure, high-performance distributed systems, robust database engines, and microservices for modern enterprises.
             </motion.p>
 
             {/* Action Buttons */}
             <motion.div
               variants={fadeUp}
-              className="mt-10 flex flex-wrap gap-4"
+              className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 href={profile.resumeUrl}
                 download
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/95 text-primary-foreground font-semibold text-sm shadow-[var(--shadow-glow)] px-6 py-4 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/95 text-primary-foreground font-semibold text-sm shadow-[var(--shadow-glow)] px-6 py-3.5 sm:py-4 cursor-pointer w-full sm:w-auto text-center"
               >
                 <Download className="h-4.5 w-4.5" /> Download Resume
               </motion.a>
@@ -120,7 +120,7 @@ export function Hero() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface hover:bg-surface-elevated text-foreground font-semibold text-sm px-6 py-4 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface hover:bg-surface-elevated text-foreground font-semibold text-sm px-6 py-3.5 sm:py-4 cursor-pointer w-full sm:w-auto text-center"
               >
                 View Projects <ArrowRight className="h-4.5 w-4.5" />
               </motion.a>
@@ -129,7 +129,7 @@ export function Hero() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/10 hover:bg-primary/20 text-accent font-semibold text-sm px-6 py-4 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/10 hover:bg-primary/20 text-accent font-semibold text-sm px-6 py-3.5 sm:py-4 cursor-pointer w-full sm:w-auto text-center"
               >
                 Contact Me / Hire
               </motion.a>
@@ -138,14 +138,14 @@ export function Hero() {
             {/* Statistics */}
             <motion.div
               variants={fadeUp}
-              className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 border-t border-border/60 pt-6"
+              className="mt-8 grid grid-cols-2 gap-2.5 sm:gap-3 sm:grid-cols-3 border-t border-border/60 pt-6"
             >
               {statistics.map((stat, i) => (
-                <div key={i} className="flex flex-col">
-                  <span className="text-xl font-bold text-foreground sm:text-2xl">
+                <div key={i} className="flex flex-col p-3 rounded-2xl bg-surface/40 border border-border/30">
+                  <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">
                     {stat.value}
                   </span>
-                  <span className="mt-0.5 text-[11px] text-muted-foreground tracking-wide font-medium">
+                  <span className="mt-0.5 text-[10px] sm:text-[11px] text-muted-foreground tracking-wide font-medium">
                     {stat.label}
                   </span>
                 </div>

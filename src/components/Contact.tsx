@@ -34,7 +34,7 @@ export function Contact() {
         {/* Contact Info Cards */}
         <motion.div
           variants={fadeUp}
-          className="glass border-white/[0.05] rounded-3xl p-6.5 flex flex-col justify-between"
+          className="glass border-white/[0.05] rounded-3xl p-5 sm:p-6.5 flex flex-col justify-between"
         >
           <div>
             <h3 className="text-lg font-bold text-foreground tracking-wide mb-6">Contact Channels</h3>

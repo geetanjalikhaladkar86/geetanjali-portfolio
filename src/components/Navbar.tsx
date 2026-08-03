@@ -26,10 +26,10 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 px-4 md:px-6"
+      className="fixed inset-x-0 top-0 z-50 px-2.5 sm:px-4 md:px-6"
     >
       <nav
-        className={`mx-auto mt-4 flex max-w-7xl items-center justify-between gap-1.5 md:gap-3 rounded-2xl px-4 py-2.5 transition-all duration-300 ${
+        className={`mx-auto mt-2 sm:mt-4 flex max-w-7xl items-center justify-between gap-2 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 ${
           scrolled
             ? "glass border-white/[0.08] shadow-[var(--shadow-card)] backdrop-blur-md"
             : "border-transparent bg-transparent"
@@ -73,7 +73,7 @@ export function Navbar() {
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-9 w-9 place-items-center rounded-xl border border-border bg-surface text-foreground xl:hidden hover:border-primary/50 cursor-pointer"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border bg-surface text-foreground xl:hidden hover:border-primary/50 cursor-pointer"
           >
             {open ? <X className="h-4.5 w-4.5" /> : <Menu className="h-4.5 w-4.5" />}
           </button>
@@ -88,14 +88,14 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="glass mx-auto mt-2 max-w-7xl border-white/[0.08] rounded-2xl p-4 grid gap-1 shadow-2xl xl:hidden"
+            className="glass mx-auto mt-2 max-w-7xl border-white/[0.08] rounded-2xl p-3.5 sm:p-4 grid gap-1 shadow-2xl xl:hidden max-h-[85vh] overflow-y-auto"
           >
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:bg-surface hover:text-foreground transition-colors"
+                className="rounded-xl px-3.5 py-2.5 text-sm font-semibold text-muted-foreground hover:bg-surface hover:text-foreground transition-colors flex items-center justify-between"
               >
                 {l.label}
               </a>
@@ -104,7 +104,7 @@ export function Navbar() {
             <a
               href={profile.resumeUrl}
               download
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 text-sm font-medium text-primary-foreground shadow-md"
+              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-md"
             >
               <Download className="h-4 w-4" />
               Download Resume

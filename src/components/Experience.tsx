@@ -11,24 +11,24 @@ export function Experience() {
       eyebrow="My Experience"
       title="Where I've Shipped Enterprise Systems."
     >
-      <div className="relative pl-6 sm:pl-10 max-w-5xl mx-auto">
+      <div className="relative pl-5 sm:pl-10 max-w-5xl mx-auto">
         {/* Timeline Line */}
         <span
           aria-hidden
-          className="absolute left-1 top-3 h-[calc(100%-1rem)] w-[2px] bg-gradient-to-b from-primary via-accent to-transparent sm:left-3"
+          className="absolute left-0.5 top-3 h-[calc(100%-1rem)] w-[2px] bg-gradient-to-b from-primary via-accent to-transparent sm:left-3"
         />
 
-        <div className="space-y-10">
+        <div className="space-y-8 sm:space-y-10">
           {experiences.map((exp, idx) => (
             <motion.article
               key={idx}
               variants={fadeUp}
-              className="glass border-white/[0.05] relative rounded-3xl p-6 sm:p-8 hover:shadow-[var(--shadow-glow)] transition-all duration-300"
+              className="glass border-white/[0.05] relative rounded-3xl p-5 sm:p-8 hover:shadow-[var(--shadow-glow)] transition-all duration-300"
             >
               {/* Timeline dot */}
               <span
                 aria-hidden
-                className="absolute -left-[1.5rem] top-9 h-4 w-4 rounded-full bg-accent border-4 border-background shadow-md sm:-left-[2.2rem]"
+                className="absolute -left-[1.35rem] top-8 sm:top-9 h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full bg-accent border-2 sm:border-4 border-background shadow-md sm:-left-[2.2rem]"
               />
 
               {/* Title & Metadata */}

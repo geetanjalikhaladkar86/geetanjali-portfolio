@@ -6,7 +6,7 @@ Create a world-class premium portfolio website for a Backend Java Developer.
 
 Developer Name:
 
-Geetanjali A. Khaladkar
+Geetanjali Khaladkar
 
 Role:
 
