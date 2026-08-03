@@ -11,7 +11,7 @@ export function Resume() {
         variants={fadeUp}
         className="glass gradient-border grid gap-8 rounded-3xl p-8 sm:p-10 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-center"
       >
-        <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-primary/15 text-2xl text-secondary">
+        <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-primary/15 text-2xl text-primary">
           <FiFileText />
         </span>
         <div className="min-w-0">

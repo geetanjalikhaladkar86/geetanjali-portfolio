@@ -23,11 +23,11 @@ const floaters = [
 
 const statistics = [
   { value: "2+", label: "Years Experience" },
-  { value: "5+", label: "Enterprise Projects" },
+  { value: "10+", label: "Projects Delivered" },
+  { value: "8+", label: "Team Members Led" },
   { value: "100+", label: "REST APIs Developed" },
   { value: "JWT", label: "Authentication" },
   { value: "Secure", label: "Payment Gateway" },
-  { value: "Scalable", label: "Microservices" },
 ];
 
 export function Hero() {
@@ -77,10 +77,10 @@ export function Hero() {
 
             <motion.h1
               variants={fadeUp}
-              className="mt-2 text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.1] tracking-tight text-foreground"
+              className="mt-2 text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.15] tracking-tight text-foreground"
             >
               Hi, I&apos;m{" "}
-              <span className="text-gradient block bg-gradient-to-r from-primary via-accent to-blue-400 bg-clip-text text-transparent">
+              <span className="text-gradient block bg-gradient-to-r from-primary via-accent to-amber-600 bg-clip-text text-transparent">
                 {profile.name}
               </span>
             </motion.h1>
@@ -138,14 +138,14 @@ export function Hero() {
             {/* Statistics */}
             <motion.div
               variants={fadeUp}
-              className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 border-t border-border/60 pt-8"
+              className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 border-t border-border/60 pt-6"
             >
               {statistics.map((stat, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="text-2xl font-extrabold text-foreground sm:text-3xl">
+                  <span className="text-xl font-bold text-foreground sm:text-2xl">
                     {stat.value}
                   </span>
-                  <span className="mt-1 text-xs text-muted-foreground tracking-wide font-medium">
+                  <span className="mt-0.5 text-[11px] text-muted-foreground tracking-wide font-medium">
                     {stat.label}
                   </span>
                 </div>

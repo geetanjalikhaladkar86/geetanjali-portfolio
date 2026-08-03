@@ -33,9 +33,9 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 const counters = [
   { label: "Public Repositories", to: 18 },
-  { label: "Commits This Year", to: 742 },
+  { label: "Projects Delivered", to: 10 },
+  { label: "Team Members Led", to: 8 },
   { label: "PRs Merged & Shipped", to: 88 },
-  { label: "Product Deployments", to: 5 },
 ];
 
 const contributionCells: number[] = Array.from({ length: 371 }, (_, i) => {
@@ -45,10 +45,11 @@ const contributionCells: number[] = Array.from({ length: 371 }, (_, i) => {
 });
 
 const languages = [
-  { name: "Java (JVM)", pct: 76, color: "bg-red-500" },
-  { name: "SQL (MySQL)", pct: 15, color: "bg-blue-400" },
-  { name: "TypeScript / JavaScript", pct: 6, color: "bg-yellow-400" },
-  { name: "Others (XML, YAML, HTML)", pct: 3, color: "bg-muted-foreground" },
+  { name: "Java (JVM)", pct: 90, color: "bg-primary" },
+  { name: "Spring Boot Framework", pct: 88, color: "bg-emerald-600" },
+  { name: "SQL (MySQL)", pct: 75, color: "bg-accent" },
+  { name: "TypeScript / JavaScript", pct: 50, color: "bg-amber-500" },
+  { name: "Others (XML, YAML, HTML)", pct: 85, color: "bg-amber-700" },
 ];
 
 const pinnedRepos = [
@@ -123,13 +124,13 @@ export function GitHubStats() {
                   style={{
                     background:
                       level === 0
-                        ? "rgba(255,255,255,0.03)"
+                        ? "var(--surface)"
                         : level === 1
-                        ? "rgba(37, 99, 235, 0.15)"
+                        ? "rgba(37, 99, 235, 0.25)"
                         : level === 2
-                        ? "rgba(37, 99, 235, 0.4)"
+                        ? "rgba(37, 99, 235, 0.55)"
                         : level === 3
-                        ? "rgba(37, 99, 235, 0.75)"
+                        ? "rgba(37, 99, 235, 0.85)"
                         : "var(--accent)",
                   }}
                 />
@@ -140,7 +141,7 @@ export function GitHubStats() {
               <span>Last 12 months activity scheduler</span>
               <div className="flex items-center gap-1.5">
                 <span>Less</span>
-                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(255,255,255,0.03)]" />
+                <span className="h-2.5 w-2.5 rounded-[2px] bg-surface" />
                 <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(37,99,235,0.15)]" />
                 <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(37,99,235,0.4)]" />
                 <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(37,99,235,0.75)]" />
@@ -207,19 +208,19 @@ export function GitHubStats() {
         <div className="lg:col-span-4 grid gap-6">
           
           {/* Card: Languages */}
-          <motion.div variants={fadeUp} className="glass border-white/[0.05] rounded-3xl p-6.5">
-            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-6">
-              Most Used Languages
+          <motion.div variants={fadeUp} className="glass border-white/[0.05] rounded-3xl p-5">
+            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-4">
+              Most Used Languages & Frameworks
             </h3>
             
-            <ul className="space-y-5">
+            <ul className="space-y-3.5">
               {languages.map((l) => (
                 <li key={l.name}>
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-semibold text-foreground">{l.name}</span>
                     <span className="text-accent font-mono">{l.pct}%</span>
                   </div>
-                  <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-surface">
+                  <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-surface">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${l.pct}%` }}

@@ -21,7 +21,7 @@ export function Loader() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
-              className="h-12 w-12 rounded-full border-2 border-border border-t-secondary"
+              className="h-12 w-12 rounded-full border-2 border-border border-t-primary"
             />
             <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">
               Compiling portfolio

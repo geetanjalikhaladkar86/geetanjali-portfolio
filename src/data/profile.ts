@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Geetanjali A. Khaladkar",
+  name: "Geetanjali Khaladkar",
   shortName: "Geetanjali Khaladkar",
   role: "Java Backend Developer",
   tagline: "Building Secure, Scalable and High Performance Enterprise Backend Applications.",

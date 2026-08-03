@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Database, Zap, Users, Code, CheckCircle2, Cpu, Activity, Briefcase, TrendingUp, Award } from "lucide-react";
+import { Shield, Database, Zap, Users, Code, CheckCircle2, Cpu, Activity, Briefcase } from "lucide-react";
 import { Section } from "./Section";
 import { fadeUp, scaleIn } from "@/animations/variants";
 import { profile } from "@/data/profile";
@@ -55,12 +55,6 @@ const specializations = [
   },
 ];
 
-const stats = [
-  { label: "Years Experience", value: "2+", icon: TrendingUp },
-  { label: "Projects Delivered", value: "10+", icon: Award },
-  { label: "Team Members Led", value: "8+", icon: Users },
-];
-
 const responsibilities = [
   "Production Support & Live Bug Resolving",
   "REST API Design & Security Layering",
@@ -111,21 +105,22 @@ export function About() {
             </div>
           </div>
 
-          {/* Stats Row */}
-          <div className="grid grid-cols-3 gap-4">
-            {stats.map(({ label, value, icon: Icon }, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                className="glass border-white/[0.05] rounded-2xl p-5 flex flex-col items-center text-center hover:border-primary/20 transition-all hover:-translate-y-0.5"
-              >
-                <div className="h-9 w-9 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center mb-3">
-                  <Icon className="h-4.5 w-4.5 text-primary" />
-                </div>
-                <span className="text-2xl font-extrabold text-foreground tracking-tight">{value}</span>
-                <span className="mt-1 text-xs text-muted-foreground font-medium leading-tight">{label}</span>
-              </motion.div>
-            ))}
+          {/* Industries Worked Card */}
+          <div className="glass border-white/[0.05] rounded-3xl p-6.5 relative overflow-hidden">
+            <div className="absolute -top-8 -right-8 h-28 w-28 rounded-full bg-accent/10 blur-2xl pointer-events-none" />
+            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest flex items-center gap-2 relative">
+              <Activity className="h-4.5 w-4.5 text-accent" /> Industries Worked
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2.5 relative">
+              {industries.map((ind, i) => (
+                <span
+                  key={i}
+                  className="rounded-xl bg-primary/10 border border-primary/25 text-primary text-xs font-semibold px-4 py-2 hover:bg-primary/20 hover:border-primary/40 transition-all cursor-default"
+                >
+                  {ind}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Responsibilities Card */}
@@ -145,29 +140,11 @@ export function About() {
           </div>
         </motion.div>
 
-        {/* Right side: Industries + Specializations */}
+        {/* Right side: Specializations */}
         <motion.div
           variants={scaleIn}
           className="lg:col-span-5 flex flex-col gap-5"
         >
-          {/* Industries Card */}
-          <div className="glass border-white/[0.05] rounded-3xl p-6.5 relative overflow-hidden">
-            <div className="absolute -top-8 -right-8 h-28 w-28 rounded-full bg-accent/10 blur-2xl pointer-events-none" />
-            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest flex items-center gap-2 relative">
-              <Activity className="h-4.5 w-4.5 text-accent" /> Industries Worked
-            </h3>
-            <div className="mt-4 flex flex-wrap gap-2.5 relative">
-              {industries.map((ind, i) => (
-                <span
-                  key={i}
-                  className="rounded-xl bg-primary/10 border border-primary/25 text-primary text-xs font-semibold px-4 py-2 hover:bg-primary/20 hover:border-primary/40 transition-all cursor-default"
-                >
-                  {ind}
-                </span>
-              ))}
-            </div>
-          </div>
-
           {/* Specializations Card */}
           <div className="glass border-white/[0.05] rounded-3xl p-6.5 flex-1">
             <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-5">Technical Focus</h3>

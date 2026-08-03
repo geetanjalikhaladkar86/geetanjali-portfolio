@@ -18,7 +18,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative mx-auto w-full max-w-6xl px-5 py-24 sm:px-8 ${className}`}>
+    <section id={id} className={`relative mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-16 ${className}`}>
       <motion.div
         variants={stagger}
         initial="hidden"
@@ -26,9 +26,9 @@ export function Section({
         viewport={{ once: true, amount: 0.15 }}
       >
         {(eyebrow || title) && (
-          <motion.div variants={fadeUp} className="mb-12 max-w-2xl">
+          <motion.div variants={fadeUp} className="mb-8 max-w-2xl">
             {eyebrow && (
-              <span className="text-xs font-semibold uppercase tracking-[0.28em] text-secondary">
+              <span className="text-xs font-semibold uppercase tracking-[0.28em] text-accent">
                 {eyebrow}
               </span>
             )}

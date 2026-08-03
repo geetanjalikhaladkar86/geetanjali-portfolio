@@ -23,13 +23,14 @@ export function AnimatedBackground() {
     resize();
     window.addEventListener("resize", resize);
 
-    const particles = Array.from({ length: 60 }, () => ({
+    const particles = Array.from({ length: 65 }, (_, i) => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: (Math.random() * 1.6 + 0.4) * dpr,
+      r: (Math.random() * 1.6 + 0.6) * dpr,
       vx: (Math.random() - 0.5) * 0.22 * dpr,
       vy: (Math.random() - 0.5) * 0.22 * dpr,
-      a: Math.random() * 0.4 + 0.15,
+      a: Math.random() * 0.3 + 0.18,
+      rgb: i % 2 === 0 ? "181, 71, 69" : "199, 143, 87",
     }));
 
     const columns = Math.floor(window.innerWidth / 34);
@@ -44,7 +45,7 @@ export function AnimatedBackground() {
       ctx.font = `${13 * dpr}px "JetBrains Mono", monospace`;
       for (let i = 0; i < drops.length; i++) {
         const char = glyphs[Math.floor(Math.random() * glyphs.length)] ?? "0";
-        ctx.fillStyle = `rgba(56, 189, 248, 0.10)`;
+        ctx.fillStyle = `rgba(181, 71, 69, 0.10)`;
         ctx.fillText(char, i * 34 * dpr, (drops[i] ?? 0) * 20 * dpr);
         if ((drops[i] ?? 0) * 20 > window.innerHeight && Math.random() > 0.985) drops[i] = 0;
         drops[i] = (drops[i] ?? 0) + 0.06;
@@ -58,7 +59,7 @@ export function AnimatedBackground() {
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99, 102, 241, ${p.a})`;
+        ctx.fillStyle = `rgba(${p.rgb}, ${p.a})`;
         ctx.fill();
       }
 
@@ -74,7 +75,7 @@ export function AnimatedBackground() {
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 opacity-70" />
+      <canvas ref={canvasRef} className="absolute inset-0 opacity-60" />
       <div className="glow-orb animate-drift absolute -left-32 top-[-10%] h-[36rem] w-[36rem] rounded-full opacity-60" />
       <div className="glow-orb animate-drift absolute -right-40 top-1/3 h-[30rem] w-[30rem] rounded-full opacity-40 [animation-delay:-6s]" />
       <div className="glow-orb animate-drift absolute bottom-0 left-1/3 h-[28rem] w-[28rem] rounded-full opacity-30 [animation-delay:-12s]" />

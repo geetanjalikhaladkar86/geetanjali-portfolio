@@ -8,22 +8,29 @@ export function MouseGlow() {
   useEffect(() => {
     if (!window.matchMedia("(pointer: fine)").matches) return;
     setEnabled(true);
-    const onMove = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
+    let rafId: number;
+    let nextPos = { x: -500, y: -500 };
+
+    const onMove = (e: MouseEvent) => {
+      nextPos = { x: e.clientX, y: e.clientY };
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setPos(nextPos));
+    };
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   if (!enabled) return null;
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-40">
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-40 overflow-hidden">
       <div
-        className="glow-orb absolute h-[26rem] w-[26rem] rounded-full opacity-35 transition-transform duration-300 ease-out"
-        style={{ transform: `translate3d(${pos.x - 208}px, ${pos.y - 208}px, 0)` }}
-      />
-      <div
-        className="absolute h-6 w-6 rounded-full border border-secondary/70 transition-transform duration-100 ease-out"
-        style={{ transform: `translate3d(${pos.x - 12}px, ${pos.y - 12}px, 0)` }}
+        className="glow-orb absolute h-[24rem] w-[24rem] rounded-full opacity-25"
+        style={{ transform: `translate3d(${pos.x - 192}px, ${pos.y - 192}px, 0)` }}
       />
     </div>
   );
