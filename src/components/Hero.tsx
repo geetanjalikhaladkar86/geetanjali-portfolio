@@ -36,7 +36,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 pb-12 sm:px-8 lg:pt-32"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 pb-12 sm:px-8 lg:pt-32 scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Floating Background Icons */}
       {floaters.map(({ Icon, className, delay }, i) => (
@@ -196,9 +196,9 @@ export function Hero() {
               <div className="flex justify-center items-center my-4 relative h-28 w-full z-10">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                   {/* Dynamic path lines */}
-                  <path d="M 20,0 L 20,40 Q 20,50 50,50 Q 80,50 80,60 L 80,100" stroke="rgba(37, 99, 235, 0.4)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" />
-                  <path d="M 50,0 L 50,100" stroke="rgba(56, 189, 248, 0.5)" strokeWidth="2" fill="none" />
-                  <path d="M 80,0 L 80,40 Q 80,50 50,50 Q 20,50 20,60 L 20,100" stroke="rgba(37, 99, 235, 0.4)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" />
+                  <path d="M 20,0 L 20,40 Q 20,50 50,50 Q 80,50 80,60 L 80,100" stroke="rgba(181, 71, 69, 0.4)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" />
+                  <path d="M 50,0 L 50,100" stroke="rgba(199, 143, 87, 0.6)" strokeWidth="2" fill="none" />
+                  <path d="M 80,0 L 80,40 Q 80,50 50,50 Q 20,50 20,60 L 20,100" stroke="rgba(181, 71, 69, 0.4)" strokeWidth="1.5" fill="none" strokeDasharray="4 4" />
 
                   {/* Flowing balls */}
                   <motion.circle r="3" fill="var(--accent)"
@@ -243,7 +243,7 @@ export function Hero() {
               {/* Flowing balls part 2 */}
               <div className="flex justify-center items-center my-4 relative h-16 w-full z-10">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <path d="M 50,0 L 50,100" stroke="rgba(56, 189, 248, 0.5)" strokeWidth="2" fill="none" />
+                  <path d="M 50,0 L 50,100" stroke="rgba(199, 143, 87, 0.6)" strokeWidth="2" fill="none" />
                   <motion.circle r="3" fill="var(--accent)"
                     animate={{ cx: [50, 50], cy: [0, 100] }}
                     transition={{ duration: 1.8, repeat: Infinity, ease: "linear", delay: 0.5 }}
@@ -255,7 +255,7 @@ export function Hero() {
               <div className="relative border border-primary/20 bg-surface rounded-2xl p-4.5 z-10 shadow-lg">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="h-9 w-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                    <div className="h-9 w-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                       <Database className="h-4.5 w-4.5" />
                     </div>
                     <div>

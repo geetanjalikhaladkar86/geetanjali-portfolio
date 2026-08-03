@@ -18,12 +18,12 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-16 ${className}`}>
+    <section id={id} className={`relative mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-16 scroll-mt-20 sm:scroll-mt-24 ${className}`}>
       <motion.div
         variants={stagger}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.01 }}
       >
         {(eyebrow || title) && (
           <motion.div variants={fadeUp} className="mb-8 max-w-2xl">

@@ -127,11 +127,11 @@ export function GitHubStats() {
                         level === 0
                           ? "var(--surface)"
                           : level === 1
-                          ? "rgba(37, 99, 235, 0.25)"
+                          ? "rgba(181, 71, 69, 0.25)"
                           : level === 2
-                          ? "rgba(37, 99, 235, 0.55)"
+                          ? "rgba(181, 71, 69, 0.55)"
                           : level === 3
-                          ? "rgba(37, 99, 235, 0.85)"
+                          ? "rgba(181, 71, 69, 0.85)"
                           : "var(--accent)",
                     }}
                   />
@@ -144,9 +144,9 @@ export function GitHubStats() {
               <div className="flex items-center gap-1.5">
                 <span>Less</span>
                 <span className="h-2.5 w-2.5 rounded-[2px] bg-surface" />
-                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(37,99,235,0.15)]" />
-                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(37,99,235,0.4)]" />
-                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(37,99,235,0.75)]" />
+                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(181,71,69,0.25)]" />
+                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(181,71,69,0.55)]" />
+                <span className="h-2.5 w-2.5 rounded-[2px] bg-[rgba(181,71,69,0.85)]" />
                 <span className="h-2.5 w-2.5 rounded-[2px] bg-[var(--accent)]" />
                 <span>More</span>
               </div>

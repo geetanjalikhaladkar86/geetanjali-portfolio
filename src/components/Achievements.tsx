@@ -8,7 +8,7 @@ const achievementsDetails = [
     title: "Enterprise Backend Applications",
     desc: "Designed and engineered low-latency, scalable JVM enterprise structures.",
     Icon: Server,
-    color: "text-blue-400"
+    color: "text-primary"
   },
   {
     title: "100+ APIs Developed",

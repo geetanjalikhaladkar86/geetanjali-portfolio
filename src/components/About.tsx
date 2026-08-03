@@ -9,9 +9,9 @@ const specializations = [
     Icon: Code,
     title: "Enterprise Backend Dev",
     description: "Designing secure, high-throughput microservices using Java and Spring Boot.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
-    border: "border-blue-500/20",
+    color: "text-primary",
+    bg: "bg-primary/10",
+    border: "border-primary/20",
   },
   {
     Icon: Shield,
