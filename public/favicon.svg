@@ -1,11 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="gk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b54745" />
-      <stop offset="100%" stop-color="#c78f57" />
+    <linearGradient id="gk-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1736" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="gk-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="url(#gk-grad)" />
-  <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
-  <text x="32" y="42" font-family="'Space Grotesk', 'Inter', system-ui, sans-serif" font-weight="800" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="-1">GK</text>
+  <rect width="64" height="64" rx="16" fill="url(#gk-bg)" />
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#gk-accent)" stroke-width="2" stroke-opacity="0.8" />
+  <text x="32" y="42.5" font-family="-apple-system, BlinkMacSystemFont, 'Space Grotesk', 'Inter', 'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="-1">GK</text>
 </svg>
